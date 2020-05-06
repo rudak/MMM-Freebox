@@ -194,8 +194,11 @@ Module.register("MMM-Freebox", {
                 }
 
                 /** activeOnly **/
+
+		console.log(client.debit);
+
                 if (this.config.activeOnly && !client.active) clientSelect.classList.add("hidden")
-                if (this.config.positiveDebitOnly && client.debit == 0) {
+                if (this.config.positiveDebitOnly && client.debit < 1) {
                     clientSelect.classList.add("hidden");
                 }
             }
